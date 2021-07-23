@@ -28,7 +28,7 @@ jobs:
       - name: Another try
         id: anotherTry
         run: |
-            id=$(echo ::$(git rev-parse --short HEAD) | cut -c1-6}
+            id=$(echo ::$(git rev-parse --short HEAD) | cut -c1-6)
             echo "::set-output name=another::$id"
       - run: echo "${{steps.anotherTry.outputs.another}}"
 
