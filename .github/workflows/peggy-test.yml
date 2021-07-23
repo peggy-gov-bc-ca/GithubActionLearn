@@ -1,0 +1,19 @@
+name: Peggy test
+on:
+  push:
+    branches: [main]
+jobs:
+  Get Git Commit SHA:
+    runs-on: ubuntu-20.04
+    environment: Development
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Get git short sha
+        id: sha
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+      - name: Display short sha
+        run: echo ${{ steps.sha.outputs.sha_short }}
+
