@@ -20,7 +20,7 @@ jobs:
       - name: Cut the length to 6
         id: shortSHA
         run: |
-            id=$(echo ${{ steps.sha.outputs.sha_short }} | cut -c0-5)
+            id=$(echo ${{ steps.sha.outputs.sha_short }} | cut -c1-5)
             
       - run: echo "{{steps.shortSHA.outputs.id}}"
 
