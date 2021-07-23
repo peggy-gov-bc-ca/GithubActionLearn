@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 jobs:
-  Get Git Commit SHA:
+  GetGitCommitSHA:
     runs-on: ubuntu-20.04
     environment: Development
     steps:
